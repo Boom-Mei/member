@@ -1,0 +1,121 @@
+/**除了引用elementUI样式外，页面需要的新的样式在此定义 */
+*{
+  margin: 0;
+  padding: 0;
+}
+html, body {
+   width: 100%;
+   height: 100%;
+ }
+/*body {*/
+/*display: block;*/
+/*margin: 0px auto;*/
+/*}*/
+
+.list-container{
+  margin-top: 30px;
+}
+
+.el-input{
+  width: 170px;
+}
+
+.el-button{
+  opacity: 0.8;
+  display: inline-block;
+  box-shadow: rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(0, 0, 0, 0.4) 0px 0px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+}
+
+.margin-top20{
+  margin-top: 20px;
+}
+
+.margin-left20{
+  margin-left: 20px;
+}
+
+.margin-top50{
+  margin-top: 50px;
+}
+
+.margin-left60{
+  margin-left: 60px;
+}
+
+.margin-left50{
+  margin-left: 50px;
+}
+
+.margin-left70{
+  margin-left: 70px;
+}
+
+.table—style{
+  width: 96%;
+  margin-left: 15px;
+}
+
+.font-title{
+  color: darkgrey;
+}
+
+.login{
+  min-width: 1200px;
+  width: 100%;
+  /*height: 625px;*/
+  height: 840px;
+  position: relative;
+  background-size: cover;
+  background: url(../assets/timg.jpg) no-repeat;
+  -webkit-background-size: cover;/* 兼容Webkit内核浏览器如Chrome和Safari */
+  -o-background-size: cover;/* 兼容Opera */
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.login-form{
+  background-color: #ffffff;
+  padding-bottom: 20px;
+  border-radius: 20px;
+  opacity: 0.9;
+  box-shadow: 10px 10px 10px 10px gray;
+  min-width: 320px;
+  max-width: 320px;
+  margin-top: 100px
+}
+
+.login-button{
+  width: 230px;
+  background-color: #545c64;
+  color: #ffffff;
+
+}
+
+.login-msg {
+  font-size: 14px;
+  color: red;
+}
+
+.header-btn:hover {
+  cursor:pointer;
+  background-color: #808080;
+  opacity: 0.5;
+  color: #ffffff;
+}
+
+th.el-table-column--selection div.cell {
+  display: none;
+}
+
+.element-align {
+  text-align: center;
+}
+
+.tab-content{
+  height: 500px;
+  overflow: auto;
+}
+
+.backClass{
+  color: #909399;
+}

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.laijiamei.member.dao.IFrontMemberDao">
+
+    <sql id="Base_Column_List" >
+        id, name, account, password, phone, sex, email,img_url imgUrl, create_emp createEmp, create_time createTime,
+        modify_emp modifyEmp, modify_time, remark, is_delete isDelete
+    </sql>
+    
+    <select id="getMemberById" resultType="com.laijiamei.member.entity.Member" parameterType="java.lang.Long">
+        select <include refid="Base_Column_List" />
+        from t_b_member
+        where is_delete = ${@com.laijiamei.member.common.Constant@IS_DELETE_NO}
+              and id = #{id}
+    </select>
+
+    <select id="login" resultType="com.laijiamei.member.entity.Member"
+                       parameterType="com.laijiamei.member.login.dto.LoginDTO">
+        select <include refid="Base_Column_List" />
+        from t_b_member
+        where is_delete = ${@com.laijiamei.member.common.Constant@IS_DELETE_NO}
+              and phone = #{phone} and password = #{password}
+    </select>
+
+    <insert id="register" parameterType="com.laijiamei.member.entity.Member">
+        insert into t_b_member(phone, password, is_delete)
+        values(#{phone}, #{password}, ${@com.laijiamei.member.common.Constant@IS_DELETE_NO})
+    </insert>
+
+    <update id="findPasswordByPhone" parameterType="com.laijiamei.member.login.dto.FindPasswordDTO">
+        update t_b_member
+        set password = #{password}
+        where id_delete = ${@com.laijiamei.member.common.Constant@IS_DELETE_NO}
+              and phone = #{phone}
+    </update>
+
+    <update id="updatePasswordById" parameterType="com.laijiamei.member.login.dto.UpdatePasswordDTO">
+        update t_b_member
+        set password = #{newPassword}
+        where is_delete = ${@com.laijiamei.member.common.Constant@IS_DELETE_NO}
+              and id = #{memberId} and password = #{oldPassword}
+    </update>
+    
+</mapper>
